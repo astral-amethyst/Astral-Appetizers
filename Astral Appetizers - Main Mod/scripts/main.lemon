@@ -1,0 +1,321 @@
+global u8 FBZ1_NIGHT
+
+//# address-hook(0x05011e) end(0x0501fc) // right after fire goes away in AIZ1.5
+function void fn05011e()
+{
+	base.fn05011e()
+	if (global.zone_act == 0x0001 && gfx.plane_update_routine == 0x0c)
+		Level.loadPaletteData(0x0b) // reload the palette because something changed i guess
+}
+
+//# address-hook(0x04fbea) end(0x04fc42) right after fire gets triggered in AIZ1
+function void fn04fbea()
+{
+	u16 previousval = u16[0xffffeec6]
+	base.fn04fbea()
+	if (u16[0xffffeec6] == 0 && previousval != 0) // should probably mean it the fire wall palette got triggered
+		loadPaletteLine1(0x06917c)
+}
+
+//# address-hook(0x23de96) end(0x23dec4) //icz1
+function void fn23de96()
+{
+	{
+		u16[A1 + 0x00] = 0x0ece
+		u16[A1 + 0x02] = 0x0eac
+		u16[A1 + 0x04] = 0x0e8a
+		u16[A1 + 0x06] = 0x0eac
+		u16[A1 + 0x08] = 0x0e8a
+		u16[A1 + 0x0a] = 0x0e8a
+		u16[A1 + 0x0c] = 0x0e68
+		u16[A1 + 0x0e] = 0x0c46
+		u16[A1 + 0x10] = 0x0c02
+		u16[A1 + 0x12] = 0x0800
+		u16[A1 + 0x14] = 0x0600
+		u16[A1 + 0x18] = 0x0eee
+		u16[A1 + 0x1a] = 0x0ece
+	}
+}
+
+		u16[0x0A8B1C + 0x16] = 0x0C88
+		u16[0x0A8B1C + 0x4c] = 0x0ECC
+		u16[0x0A8B1C + 0x50] = 0x0EAA
+		u16[0x0A8B1C + 0x52] = 0x0CAA
+		u16[0x0A8B1C + 0x54] = 0x0C88
+		u16[0x0A8B1C + 0x56] = 0x0C88
+		u16[0x0A8B1C + 0x58] = 0x0C88
+		u16[0x0A8B1C + 0x5a] = 0x0A66
+		u16[0x0A8B1C + 0x5c] = 0x0866
+
+
+//# address-hook(0x23e20e) end(0x23e23c) //icz2
+function void fn23e20e()
+{
+	if ((global.game_mode & 0x80) == 0)
+	{
+		A1 = 0xfffffc62
+		u32[(A1+=4)-4] = 0x0eec0cc6
+		u32[(A1+=4)-4] = 0x0c800c60
+		u32[(A1+=4)-4] = 0x0c400a40
+		u32[(A1+=4)-4] = 0x08200620
+	#if STANDALONE
+		u32[0xfffffc7c] = 0x0c600ea4	// New line, corrects original S3&K glitch with brightest two colors in background reflections on water
+	#endif
+		objA1.update_address = 0x02000600
+	}
+
+	A1 = 0xfffffce2
+	u32[(A1+=4)-4] = 0x0eec0cc6
+	u32[(A1+=4)-4] = 0x0c800c60
+	u32[(A1+=4)-4] = 0x0c400a40
+	u32[(A1+=4)-4] = 0x08200620
+#if STANDALONE
+	u32[0xfffffc7c] = 0x0c600ea4	// New line, corrects original S3&K glitch with brightest two colors in background reflections on water
+#endif
+	objA1.update_address = 0x02000600
+}
+
+// The Death Egg in background (Fix by ramona maybe)
+//# address-hook(0x0659cc) end(0x065a2c)
+function void fn0659cc()
+{
+    setupObjectAttributesFull(0x0664aa)
+    objA0.update_address = 0x065a30
+
+    objA0.position.x.u16 = 0x0200
+    objA0.position.y.u16 = 0x0c68
+    objA0.velocity.y = 0x0c68
+    u16[A0 + 0x40] = 0xffc0
+    objA0.countdown_value = 0x0100
+    global.random.seed = global.framecounter
+
+    // "spawnChildObjects(0x0665c4)" replaced by:
+    spawnChildObject(0x065b0e, 0x00, 0, 0)
+    spawnChildObject(0x065a8c, 0x02, 0, -51)
+    spawnChildObject(0x065b42, 0x04, -32, 29)
+    spawnChildObject(0x065b42, 0x06, -16, 29)
+    spawnChildObject(0x065b42, 0x08, 8, 29)
+    spawnChildObject(0x065b42, 0x0a, 16, 29)
+    spawnChildObject(0x065b42, 0x0c, 40, 29)
+
+    copyMemory(0xfffffce0, 0xfffffc60, 0x20)
+
+    A1 = 0x0669be
+    A2 = 0xfffffc6c
+    D0 = 0x0a
+    while (D0.s16 >= 0)
+    {
+        D1.u16 = u16[(A1+=2)-2]
+        if (D1.u16 != 0)
+        {
+            u16[A2] = D1.u16
+        }
+        A2 += 2
+        --D0.s16
+    }
+
+    fn065a30()
+}
+
+
+//# address-hook(0x00227c) end(0x002332) //aiz2
+function void LevelPaletteUpdate.AIZ2()
+{
+	--level.palettefx.timer_1
+	if (s16(level.palettefx.timer_1) < 0)
+	{
+		level.palettefx.timer_1 = 5
+		D0.u16 = level.palettefx.frame_1 & 0x18
+		level.palettefx.frame_1 += 8
+		
+		copyMemory(0xfffffc78, 0x002c26 + D0.u16, 8)
+		D0.u16 = level.palettefx.frame_2
+		level.palettefx.frame_2 = (level.palettefx.frame_2 + 6) % 48
+		
+		if (camera.position.x.u16 >= 0x1c0)
+			u16[0xfffffc5c] = 0x0aa2 // previously 0x0a0e
+		else
+			u16[0xfffffc5c] = u16[0xfffffc76]
+	}
+}
+
+
+//# address-hook(0x068646) end(0x06868e)
+function void fn068646()
+{
+	objA0.update_address = 0x068690
+	loadPaletteLine1(0x00227c)
+
+	u8[A0 + 0x28] = 0x0f
+	playMusic(MUSIC_CTRL_FADEOUT)
+
+	objA0.velocity.x = 0x400
+	objA0.velocity.y = 0
+	objA0.countdown_value = (global.zone_act == 0x0000) ? 0x120 : 0x40
+	objA0.countdown_callback = addressof(Object.TriggerUnloading)
+
+	// Trigger fire wall
+	u8[0xffffeec6] = 0xff
+}
+
+
+//FBZ BG PALETTE
+
+
+function void copyPaletteDataFromTable(u8 index, u16 ramAddress)
+{
+	if ((index == 0x12 || index == 0x13) )
+	{
+		u64 key = "fbz_s3c_night_interior" // base palette for both acts
+		u16 numColors = System.loadExternalPaletteData(key, 0, 0x800000, 0x10)
+
+		for (u8 i = 0; i < numColors; ++i)
+		{
+			u32 rgba = u32[0x800000 + i * 4]
+			if (rgba & 0xff000000)
+			{
+				u16[0x0A90DC + i * 2] = packColorExt(rgba)
+				u16[0x0A913C + i * 2] = packColorExt(rgba)
+			}
+		}
+		key = "fbz_s3c_night_interior_overlay" // overlayed onto base palette when switching back to interior
+		numColors = System.loadExternalPaletteData(key, 0, 0x800000, 0x08)
+		for (u8 i = 0; i < numColors; ++i)
+		{
+			u32 rgba = u32[0x800000 + i * 4]
+			if (rgba & 0xff000000)
+				u16[0x052DC0 + i * 2] = packColorExt(rgba)
+		}
+		if (index == 0x13 && (System.getGlobalVariableValueByName("useottsOriginalZoneOrder.fbzPalettes") != 0 && !Game.getSetting(SETTING_ICZ_NIGHTTIME)))
+		{
+			base.copyPaletteDataFromTable(index, ramAddress)
+			return
+		}
+		key = "fbz1_s3c_night" // overlayed onto base palette for sky sections
+		numColors = System.loadExternalPaletteData(key, 0, 0x800000, 0x0e)
+
+		for (u8 i = 0; i < numColors; ++i)
+		{
+			u32 rgba = u32[0x800000 + i * 4]
+			if (rgba & 0xff000000)
+				u16[0x052dd0 + i * 2] = packColorExt(rgba)
+		}
+	}
+	base.copyPaletteDataFromTable(index, ramAddress)
+}
+
+
+//END  FBZ BG PALETTE
+
+
+
+
+
+// should be fine ~ Ramona
+//# address-hook(0x07305a)
+function void fn07305a() // fade to red
+{
+	base.fn07305a()
+	u16 lbz2fadeprog = max(s16(u16[A0 + 0x48]-1),0) // "laziness" >it takes more effort
+	if (Mods.isModActive("big-arm-fade")) // a papertriangle mod :3
+	{
+		// need to access variables without requiring the mod itself
+		u16 p1 = System.getGlobalVariableValueByName("bigarmfade.p1")
+		u16 p2 = System.getGlobalVariableValueByName("bigarmfade.p2")
+		u16 p3 = System.getGlobalVariableValueByName("bigarmfade.p3")
+		u16 p4 = System.getGlobalVariableValueByName("bigarmfade.p4")
+		u8 steps = System.getGlobalVariableValueByName("bigarmfade.steps")
+		
+		if (lbz2fadeprog < 48 && lbz2fadeprog % steps == 0)
+		{
+			u16[0xfffffc00 + 0x3b * 2] = blendColorsPacked(p1, 0x0408, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3c * 2] = blendColorsPacked(p2, 0x0006, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3d * 2] = blendColorsPacked(p3, 0x0004, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3e * 2] = blendColorsPacked(p4, 0x0002, lbz2fadeprog * 5)
+		}
+		else if (lbz2fadeprog == 48)
+		{
+			u16[0xfffffc00 + 0x3b * 2] = 0x0408
+			u16[0xfffffc00 + 0x3c * 2] = 0x0006
+			u16[0xfffffc00 + 0x3d * 2] = 0x0004
+			u16[0xfffffc00 + 0x3e * 2] = 0x0002
+		}
+		return
+	}
+	// Sky palette fade steps
+	if (lbz2fadeprog == 16)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0a48
+		u16[0xfffffc00 + 0x3c * 2] = 0x0806
+		u16[0xfffffc00 + 0x3d * 2] = 0x0604
+		u16[0xfffffc00 + 0x3e * 2] = 0x0402
+	}
+	else if (lbz2fadeprog == 32)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0628
+		u16[0xfffffc00 + 0x3c * 2] = 0x0406
+		u16[0xfffffc00 + 0x3d * 2] = 0x0204
+		u16[0xfffffc00 + 0x3e * 2] = 0x0202
+	}
+	else if (lbz2fadeprog == 48)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0408
+		u16[0xfffffc00 + 0x3c * 2] = 0x0006
+		u16[0xfffffc00 + 0x3d * 2] = 0x0004
+		u16[0xfffffc00 + 0x3e * 2] = 0x0002
+	}
+}
+
+//# address-hook(0x072e30)
+function void fn072e30() // fade back to blue
+{
+	base.fn072e30()
+	u16 lbz2fadeprog = max(s16(u16[A0 + 0x48]-1),0) // "laziness" >it takes more effort
+	if (Mods.isModActive("big-arm-fade")) // a papertriangle mod :3
+	{
+		// need to access variables without requiring the mod itself
+		u16 p1 = System.getGlobalVariableValueByName("bigarmfade.p1")
+		u16 p2 = System.getGlobalVariableValueByName("bigarmfade.p2")
+		u16 p3 = System.getGlobalVariableValueByName("bigarmfade.p3")
+		u16 p4 = System.getGlobalVariableValueByName("bigarmfade.p4")
+		u8 steps = System.getGlobalVariableValueByName("bigarmfade.steps")
+		
+		if (lbz2fadeprog < 48 && lbz2fadeprog % steps == 0)
+		{
+			u16[0xfffffc00 + 0x3b * 2] = blendColorsPacked(0x0408, p1, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3c * 2] = blendColorsPacked(0x0006, p2, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3d * 2] = blendColorsPacked(0x0004, p3, lbz2fadeprog * 5)
+			u16[0xfffffc00 + 0x3e * 2] = blendColorsPacked(0x0002, p4, lbz2fadeprog * 5)
+		}
+		else if (u16[A0 + 0x48] == 48)
+		{
+			u16[0xfffffc00 + 0x3b * 2] = p1
+			u16[0xfffffc00 + 0x3c * 2] = p2
+			u16[0xfffffc00 + 0x3d * 2] = p3
+			u16[0xfffffc00 + 0x3e * 2] = p4
+		}
+		return
+	}
+	// Sky palette fade steps
+	if (lbz2fadeprog == 16)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0628
+		u16[0xfffffc00 + 0x3c * 2] = 0x0406
+		u16[0xfffffc00 + 0x3d * 2] = 0x0204
+		u16[0xfffffc00 + 0x3e * 2] = 0x0202
+	}
+	else if (lbz2fadeprog == 32)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0a48
+		u16[0xfffffc00 + 0x3c * 2] = 0x0806
+		u16[0xfffffc00 + 0x3d * 2] = 0x0604
+		u16[0xfffffc00 + 0x3e * 2] = 0x0402
+	}
+	else if (lbz2fadeprog == 48)
+	{
+		u16[0xfffffc00 + 0x3b * 2] = 0x0a60
+		u16[0xfffffc00 + 0x3c * 2] = 0x0a20
+		u16[0xfffffc00 + 0x3d * 2] = 0x0800
+		u16[0xfffffc00 + 0x3e * 2] = 0x0400
+	}
+}

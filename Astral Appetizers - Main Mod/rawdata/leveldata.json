@@ -1,0 +1,16 @@
+{
+// EHZ Palette
+    "ehz_palette_rtwi":  { "File": "../level/EHZ/Palette/Palette RtWI.bin" },
+    "ehz_palette":  { "File": "../level/EHZ/Palette/Palette.bin" },
+    "ehz_palette_s2":  { "File": "../level/EHZ/Palette/S2 Palette.bin" },
+    "ehz_palettecycle":  { "File": "../level/EHZ/Palette/EHZ ARZ Water.bin" },
+	
+// CPZ Palette + Tiles fix
+    "cpz_palette_rtwi":  { "File": "../level/CPZ/Palette/Palette RtWI.bin" },
+    "cpz_palette":  { "File": "../level/CPZ/Palette/Palette.bin" },
+    "cpz_palette_s2":  { "File": "../level/CPZ/Palette/S2 Palette.bin" },
+    "cpz_palette_underwater":  { "File": "../level/CPZ/Palette/Palette Underwater.bin" },
+    "cpz_palette_underwater_hard":  { "File": "../level/CPZ/Palette/Palette Underwater Hard.bin" },
+    "cpz_palettecycles":  { "File": "../level/CPZ/Palette/Palette Cycles.bin" },
+    "cpz_tiles":  { "File": "../level/CPZ/Tiles/Tiles.bin" },
+}

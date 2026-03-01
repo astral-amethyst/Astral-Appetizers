@@ -1,0 +1,535 @@
+{
+	"TITLE":
+	{
+		"File": "TITLE.bin",
+		"RomInject": "0x47ac"
+	},
+	
+	"TITLE BANNER":
+	{
+		"File": "TITLE-BANNER.bin",
+		"RomInject": "0x35026C"
+	},
+	
+	"TSZ INTRO": 
+	{
+		"File": "TSZ-INTRO.bin",
+		"RomInject": "0x0a8b1c"
+	},
+	
+	"TSZ1": 
+	{
+		"File": "TSZ1.bin",
+		"RomInject": "0x0a8b7c"
+	},
+	
+	"TSZ1 WATER": 
+	{
+		"File": "TSZ1W.bin",
+		"RomInject": "0x0a8c9c"
+	},
+
+	"TSZ2":
+	{
+		"File": "TSZ2.bin",
+		"RomInject": "0x0A8BDC"
+	},	
+	
+	"TSZ2 WATER":
+	{
+		"File": "TSZ2-WATER.bin",
+		"RomInject": "0x0A8D1C"
+	},	
+	
+	"TSZ2 B":
+	{
+		"File": "TSZ2-B.bin",
+		"RomInject": "0x0A8C3C"
+	},
+	
+	"HCZ1": 
+	{
+		"File": "HCZ1.bin",
+		"RomInject": "0xA8D9C"
+	},
+	
+	"HCZ1 WATER": 
+	{
+		"File": "HCZ1-WATER.bin",
+		"RomInject": "0x0a8e5c"
+	},	
+	
+	"HCZ2": 
+	{
+		"File": "HCZ2.bin",
+		"RomInject": "0xA8DFC"
+	},
+	
+	"HCZ2 WATER":
+	{
+		"File": "HCZ2-WATER.bin",
+		"RomInject": "0x0A8EDC"
+	},	
+	
+	"MGZ":
+	{
+		"File": "MGZ.bin",
+		"RomInject": "0x0A8F5C"
+	},
+	
+	"MGZ to CNZ":
+	{
+		"File": "MGZ-CNZ.bin",
+		"RomInject": "0x0364896"
+	},
+
+	"CNZ":
+	{
+		"File": "CNZ.bin",
+		"RomInject": "0x0A8FBC"
+	},
+
+	"CNZ2 DARK+WATER":
+	{
+		"File": "CNZ-WATER.bin",
+		"RomInject": "0x0A901C"
+	},
+
+	"CNZ2 FLASH":
+	{
+		"File": "CNZ-FLASH.bin",
+		"RomInject": "0x066932"
+	},
+
+	"FBZ1":
+	{
+		"File": "FBZ1.bin",
+		"RomInject": "0xA909C"
+	},	
+	
+	"FBZ2": 
+	{
+      "File": "FBZ2.bin",
+      "RomInject": "0xA90FC"
+    },		
+		
+	"FBZ OUTSIDE": 
+	{
+      "File": "FBZ-OUTSIDE.bin",
+	  "RomInject": "0x052DD0"
+    },		
+	
+	"FBZ INSIDE":
+	{
+		"File": "FBZ-INSIDE.bin",
+		"RomInject": "0x052DC0"
+	},
+
+	"ICZ1":
+	{
+		"File": "ICZ1.bin",
+		"RomInject": "0x0A915C"
+	},
+
+	"ICZ2":
+	{
+		"File": "ICZ2.bin",
+		"RomInject": "0x0A91BC"
+	},
+	
+	"ICZ2 WATER":
+	{
+		"File": "ICZ2-WATER.bin",
+		"RomInject": "0x0A921C"
+	},
+
+	"LBZ1":
+	{
+		"File": "LBZ1.bin",
+		"RomInject": "0x0A929C"
+	},
+	
+	"LBZ2":
+	{
+		"File": "LBZ2.bin",
+		"RomInject": "0x0A92FC"
+	},
+	"LBZ2 WATER":
+	{
+		"File": "LBZ2-WATER.bin",
+		"RomInject": "0x0A935C"
+	},
+  
+    "MVZ1": 
+	{
+		"File": "MVZ1.bin",
+		"RomInject": "0x0a943c"
+	},
+
+
+    "MHZ2 AUTUMN": 
+	{
+		"File": "MVZ-AUTUMN.bin",
+		"RomInject": "0x0a949c"
+	},
+
+    "MVZ2 WINTER": 
+	{
+		"File": "MVZ-WINTER.bin",
+		"RomInject": "0x0550fe"
+	},
+	
+	"MVZ FBZ": 
+    {
+        "File": "MVZ-FBZ.bin",
+        "RomInject": "0x000550DE"
+    },
+
+	"SOZ1":
+	{
+		"File": "SOZ1.bin",
+		"RomInject": "0xA94FC"
+	},
+
+ 	"SOZ2":
+	{
+		"File": "SOZ2.bin",
+		"RomInject": "0xA955C"
+	},
+	
+	"SOZ2 DARK":
+	{
+		"File": "SOZ2-DARK.bin",
+		"RomInject": "0x317a"
+	},
+	
+	"sand":
+	{
+		"File": "SOZ-SAND.bin",
+		"RomInject": "0x30DA"
+	},
+	
+	
+	"LRZ1":
+	{
+		"File": "LRZ1.bin",
+		"RomInject": "0x0A967C",
+	},
+	
+	"LRZ1 Miniboss":
+	{
+		"File": "LRZ1-MINIBOSS.bin",
+		"RomInject": "0x078E2A"
+	},
+	
+	"LRZ2 Intro":
+	{
+		"File": "LRZ2-INTRO.bin",
+		"RomInject": "0x078e6a"
+	},		
+
+	"LRZ2 A":
+	{
+		"File": "LRZ2.bin",
+		"RomInject": "0x0a96dc",
+	},
+
+	"LRZ2 B": 
+	{
+		"File": "LRZ2-B.bin",
+		"RomInject": "0x0a9cdc"
+	},
+	
+	"LRZ2 Fire": 
+	{
+		"File": "LRZ2-FIRE.bin",
+		"RomInject": "0x079726"
+	},
+	
+	"HPZ": 
+	{
+		"File": "HPZ1.bin",
+		"RomInject": "0x0A9D3C"
+	},
+	
+	"HPZ2":
+	{
+		"File": "HPZ2.bin",
+		"RomInject": "0x0A9D5C"
+	},
+	
+	"HPZ3":
+	{
+		"File": "HPZ3.bin",
+		"RomInject": "0x0669D2"
+	},
+	
+	"HPZ4":
+	{
+		"File": "HPZ4.bin",
+		"RomInject": "0x0669F2"
+	},  
+  
+  	"SSZ1":
+	{
+		"File": "SSZ.bin",
+		"RomInject": "0x0A973C"  
+	},
+	
+	"SSZ2/ENDING":
+	{
+		"File": "ENDING.bin",
+		"RomInject": "0x0A979C"
+	},	
+
+
+	"DEZ1":
+	{
+		"File": "DEZ1.bin",
+		"RomInject": "0x0A98BC"
+	},
+	
+	"DEZ2":
+	{
+		"File": "DEZ2.bin",
+		"RomInject": "0x0A991C"
+	},	
+	
+	"TDZ":
+	{
+		"File": "THEDOOMSDAY.bin",
+		"RomInject": "0x0A997C"
+	},
+
+	"ALZ":
+	{
+		"File": "ALZ.bin",
+		"RomInject": "0xA99DC"
+	},
+
+	"BPZ":
+	{
+		"File": "BPZ.bin",
+		"RomInject": "0xA9A3C"
+	},
+	
+	"CGZ":
+	{
+		"File": "CGZ.bin",
+		"RomInject": "0xA9AFC"
+	},	
+	
+	"DPZ":
+	{
+		"File": "DPZ.bin",
+		"RomInject": "0xA9A9C"
+	},		
+	
+	"EMZ":
+	{
+		"File": "EMZ.bin",
+		"RomInject": "0xA9B5C"
+	},
+	
+	"COMPETITION ICONS":
+	{
+		"File": "COMPETITION-ICONS.bin",
+		"RomInject": "0x20A5BE"
+	},
+	
+	"AIZ ICON":
+	{
+		"File": "ZONE1.bin",
+		"RomInject": "0xCB18"
+	},
+	
+	"HCZ ICON":
+	{
+		"File": "ZONE2.bin",
+		"RomInject": "0xCB38"
+	},
+	
+	"MGZ ICON":
+	{
+		"File": "ZONE3.bin",
+		"RomInject": "0xCB58"
+	},
+	
+	"CNZ ICON":
+	{
+		"File": "ZONE4.bin",
+		"RomInject": "0xCB78"
+	},
+	
+	"ICZ ICON":
+	{
+		"File": "ZONE5.bin",
+		"RomInject": "0xCB98"
+	},
+	
+	"LBZ ICON":
+	{
+		"File": "ZONE6.bin",
+		"RomInject": "0xCBB8"
+	},
+	
+	"MVZ ICON":
+	{
+		"File": "ZONE7.bin",
+		"RomInject": "0xCBD8"
+	},
+	
+	"FBZ ICON":
+	{
+		"File": "ZONE8.bin",
+		"RomInject": "0xCBF8"
+	},
+	
+	"FBZ ICON - S3":
+	{
+		"File": "ZONE8-S3.bin",
+		"RomInject": "0x20BCB6"
+	},
+	
+	"SOZ ICON":
+	{
+		"File": "ZONE9.bin",
+		"RomInject": "0xCC18"
+	},
+	
+	"LRZ ICON":
+	{
+		"File": "ZONEA.bin",
+		"RomInject": "0xCC38"
+	},
+	
+	"HPZ ICON":
+	{
+		"File": "ZONEB.bin",
+		"RomInject": "0xCC58"
+	},
+	
+	"SSZ ICON":
+	{
+		"File": "ZONEC.bin",
+		"RomInject": "0xCC78"
+	},
+	
+	"DEZ ICON":
+	{
+		"File": "ZONED.bin",
+		"RomInject": "0xCC98"
+	},
+	
+	"DATA SELECT":
+	{
+		"File": "DATASELECT.bin",
+		"RomInject": "0x39D262"
+	},
+	
+	"COMPETITION":
+	{
+		"File": "COMPETITION.bin",
+		"RomInject": "0x39D282"
+	},
+	
+	"BOUNS - GUMBALL":
+	{
+		"File": "BONUS-GUMBALL.bin",
+		"RomInject": "0xA9BBC"
+	},	
+	
+	"BOUNS - PACHINKO":
+	{
+		"File": "BONUS-PACHINKO.bin",
+		"RomInject": "0xA9C1C"
+	},		
+	
+	"BOUNS - SLOTS":
+	{
+		"File": "BONUS-SLOTS.bin",
+		"RomInject": "0xA9C7C"
+	},
+	
+	"BS1 - TSZ":
+	{
+		"File": "BS1.bin",
+		"RomInject": "0x089FE"
+	},
+	"BS2 - HCZ":
+	{
+		"File": "BS2.bin",
+		"RomInject": "0x08A24"
+	},
+	"BS3 - MGZ":
+	{
+		"File": "BS3.bin",
+		"RomInject": "0x08A4A"
+	},
+	"BS4 - CNZ":
+	{
+		"File": "BS4.bin",
+		"RomInject": "0x08A70"
+	},
+	"BS5 - FBZ":
+	{
+		"File": "BS5.bin",
+		"RomInject": "0x08A96"
+	},
+	"BS6 - ICZ":
+	{
+		"File": "BS6.bin",
+		"RomInject": "0x08ABC"
+	},
+	"BS7 - LBZ":
+	{
+		"File": "BS7.bin",
+		"RomInject": "0x08AE2"
+	},
+	"BS8 - MVZ":
+	{
+		"File": "BS8.bin",
+		"RomInject": "0x08B2E"
+	},
+	"BS9 - LIZ":
+	{
+		"File": "BS9.bin",
+		"RomInject": "0x08B08"
+	},
+	"BS10 - SOZ":
+	{
+		"File": "BS10.bin",
+		"RomInject": "0x08B54"
+	},
+	"BS11 - LRZ":
+	{
+		"File": "BS11.bin",
+		"RomInject": "0x08B7A"
+	},
+	"SS12 - HPZ":
+	{
+		"File": "BS12.bin",
+		"RomInject": "0x08BA0"
+	},
+	"BS13 - SSZ":
+	{
+		"File": "BS13.bin",
+		"RomInject": "0x08BC6"
+	},
+	"BS14 - DEZ":
+	{
+		"File": "BS14.bin",
+		"RomInject": "0x08BEC"
+	},
+	"BS15 - TDZ":
+	{
+		"File": "BS15.bin",
+		"RomInject": "0x08C12"
+	},	
+	"BS16 - ORZ":
+	{
+		"File": "BS16.bin",
+		"RomInject": "0x08C38"
+	}
+	
+}
