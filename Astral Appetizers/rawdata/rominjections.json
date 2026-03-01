@@ -276,13 +276,42 @@
 		"RomInject": "0x0A973C"  
 	},
 	
-	"SSZ2/ENDING":
+	"SSZ2/ENDING 1":
 	{
 		"File": "ENDING.bin",
 		"RomInject": "0x0A979C"
 	},	
 
+	"ENDING 2":
+	{
+		"File": "ENDING2.bin",
+		"RomInject": "0x0A97FC"
+	},	
+	
+	"ENDING 2 AGAIN":
+	{
+		"File": "ENDING2.bin",
+		"RomInject": "0x0A985C"
+	},		
 
+	"ENDING PAL CYCLE":
+	{
+		"File": "ENDING_PALCYCLE.bin",
+		"RomInject": "0x0592BE"
+	},		
+
+	"ENDING CLOUDS":
+	{
+		"File": "ENDING_CLOUDS.bin",
+		"RomInject": "0x060B3A"
+	},
+
+	"ENDING SKY":
+	{
+		"File": "ENDING_SKY.bin",
+		"RomInject": "0x05B16E"
+	},	
+		
 	"DEZ1":
 	{
 		"File": "DEZ1.bin",
@@ -294,7 +323,12 @@
 		"File": "DEZ2.bin",
 		"RomInject": "0x0A991C"
 	},	
-	
+
+	"DEZ2B":
+	{
+		"File": "DEZ2B.bin",
+		"RomInject": "0x0A9D9C"
+	},		
 	"TDZ":
 	{
 		"File": "THEDOOMSDAY.bin",
