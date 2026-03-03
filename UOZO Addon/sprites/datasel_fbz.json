@@ -1,0 +1,6 @@
+{
+	"useottsOriginalZoneOrder.fbz_dataselect_preview": { "File": "datasel_fbz.png", "Rect": "0,0,80,56"},
+	"useottsOriginalZoneOrder.fbz_dataselect_preview_s3a": { "File": "datasel_fbz_s3a.png", "Rect": "0,0,80,56"},
+	"useottsOriginalZoneOrder.fbz_dataselect_preview_ess": { "File": "datasel_fbz.png", "Rect": "0,0,80,56", "Center": "40,28" },
+	"useottsOriginalZoneOrder.fbz_dataselect_preview_s3a_ess": { "File": "datasel_fbz_s3a.png", "Rect": "0,0,80,56", "Center": "40,28" }
+}

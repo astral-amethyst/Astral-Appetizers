@@ -1,0 +1,7 @@
+{
+	"menu_characters_sonic":  { "File": "menu_characters_sonic.bmp", "Rect": "0,0,40,40", "Center": "20,20" },
+	"menu_characters_sonic_tails":  { "File": "menu_characters_sonic_tails.bmp", "Rect": "0,0,56,40", "Center": "28,20" },
+	"menu_characters_tails":  { "File": "menu_characters_tails.bmp", "Rect": "0,0,40,40", "Center": "20,20" },
+	"menu_characters_knuckles":  { "File": "menu_characters_knuckles.bmp", "Rect": "0,0,40,40", "Center": "20,20" },
+	"menu_characters_knuckles_tails":  { "File": "menu_characters_knuckles_tails.bmp", "Rect": "0,0,56,40", "Center": "28,20" }
+}
