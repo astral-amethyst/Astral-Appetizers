@@ -1,0 +1,4 @@
+{
+	"endpose_supersonic":  { "File": "endpose_supersonic.bmp", "Rect": "0,0,103,136", "Center": "64,54" },
+	"endpose_supersonic_0x01":  { "File": "endpose_supersonic_funny.bmp", "Rect": "0,0,128,136", "Center": "64,68" }
+}
